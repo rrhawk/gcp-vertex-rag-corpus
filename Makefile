@@ -1,8 +1,8 @@
 HOSTNAME=registry.terraform.io
 NAMESPACE=rrhawk
 NAME=vertexairag
-BINARY=terraform-provider-${NAME}
 VERSION=0.1.1
+BINARY=terraform-provider-${NAME}_v${VERSION}
 OS_ARCH=linux_amd64
 
 default: install
