@@ -121,13 +121,13 @@ func (r *RagCorpusResource) Create(ctx context.Context, req resource.CreateReque
 	}
 
 	payload := map[string]interface{}{
-		"display_name": data.DisplayName.ValueString(),
-		"description":  data.Description.ValueString(),
+		"displayName": data.DisplayName.ValueString(),
+		"description": data.Description.ValueString(),
 	}
 
 	if data.EmbeddingModelConfig != nil {
-		payload["embedding_model_config"] = map[string]interface{}{
-			"publisher_model": fmt.Sprintf("publishers/google/models/%s", data.EmbeddingModelConfig.Model.ValueString()),
+		payload["embeddingModelConfig"] = map[string]interface{}{
+			"publisherModel": fmt.Sprintf("publishers/google/models/%s", data.EmbeddingModelConfig.Model.ValueString()),
 		}
 	}
 
@@ -280,8 +280,8 @@ func (r *RagCorpusResource) Update(ctx context.Context, req resource.UpdateReque
 	}
 
 	payload := map[string]interface{}{
-		"display_name": data.DisplayName.ValueString(),
-		"description":  data.Description.ValueString(),
+		"displayName": data.DisplayName.ValueString(),
+		"description": data.Description.ValueString(),
 	}
 
 	body, err := json.Marshal(payload)
