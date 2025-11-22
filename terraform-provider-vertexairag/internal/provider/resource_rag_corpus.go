@@ -127,7 +127,9 @@ func (r *RagCorpusResource) Create(ctx context.Context, req resource.CreateReque
 
 	if data.EmbeddingModelConfig != nil {
 		payload["ragEmbeddingModelConfig"] = map[string]interface{}{
-			"publisherModel": fmt.Sprintf("publishers/google/models/%s", data.EmbeddingModelConfig.Model.ValueString()),
+			"vertexPredictionEndpoint": map[string]interface{}{
+				"endpoint": fmt.Sprintf("publishers/google/models/%s", data.EmbeddingModelConfig.Model.ValueString()),
+			},
 		}
 	}
 
