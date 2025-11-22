@@ -126,7 +126,7 @@ func (r *RagCorpusResource) Create(ctx context.Context, req resource.CreateReque
 	}
 
 	if data.EmbeddingModelConfig != nil {
-		payload["embeddingModelConfig"] = map[string]interface{}{
+		payload["ragEmbeddingModelConfig"] = map[string]interface{}{
 			"publisherModel": fmt.Sprintf("publishers/google/models/%s", data.EmbeddingModelConfig.Model.ValueString()),
 		}
 	}
